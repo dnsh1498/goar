@@ -190,4 +190,5 @@ body:has(#results[open]) { overflow: hidden; }
   max-width: 100%;
   justify-self: stretch;
   box-sizing: border-box;
+    max-width: calc(100% - 44px);
 }
