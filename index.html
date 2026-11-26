@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#242432">
+  <title>В субботу вечером</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main id="view" class="scene" data-look="night">
+    <section class="message" id="invitation" aria-labelledby="question">
+      <h1 class="headline" id="question">Свободна ли ты<br>в субботу<br>вечером?</h1>
+      <button class="action" id="accept" type="button">Да</button>
+    </section>
+    <img class="figure" src="images/coraline-wave.svg" alt="">
+  </main>
+  <main id="plan" hidden aria-labelledby="plan-title">
+    <header class="plan-header">
+      <a id="back" href="#night">К приглашению</a>
+      <h1 id="plan-title" tabindex="-1">План на<br>субботу</h1>
+    </header>
+    <ol class="steps" role="list">
+      <li>
+        <h2>Готовим вместе</h2>
+        <p>Готовим это?</p>
+        <div id="player"></div>
+        <a class="source-link" href="https://www.instagram.com/p/DgGg__7ReDK/" target="_blank" rel="noopener noreferrer">Открыть в Instagram</a>
+      </li>
+      <li>
+        <h2>Выбираем вино</h2>
+        <p>Пьем Karas ?</p>
+        <img class="plan-photo" src="images/karas.jpg" alt="Красное и белое вино Karas на деревянном столе. Красное — слева." width="900" height="600" loading="lazy">
+      </li>
+      <li>
+        <h2>Включаем «Теда Лассо»</h2>
+        <p>Тед лассо или ?</p>
+        <img class="plan-photo" src="images/ted-lasso.jpg" alt="На столе в светлой кухне открыт MacBook с кадром из «Теда Лассо»." width="1080" height="720" loading="lazy">
+      </li>
+      <li>
+        <h2>Ужинаем на диване</h2>
+        <p>тут обнимаемся?</p>
+        <img class="plan-photo" src="images/dinner.jpg?v=2" alt="Лиловый угловой диван с синим пледом, рядом столик с пастой и двумя бокалами вина." width="1080" height="720" loading="lazy">
+      </li>
+      <li>
+        <h2>Заполни и пришли мне</h2>
+        <form id="feedback">
+        <fieldset>
+          <legend>Что приготовим?</legend>
+          <label class="radio"><input type="radio" name="dish" value="Блюдо из рилса" required> Согласна — блюдо из рилса</label>
+          <label class="radio"><input type="radio" name="dish" value="other"> Хочу другое блюдо</label>
+          <label class="custom-answer" hidden>Твоё блюдо
+            <input type="text" name="dishText" maxlength="80" pattern=".*\S.*" disabled>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Что будем пить?</legend>
+          <label class="radio"><input type="radio" name="drink" value="Karas Red Blend" required> Согласна — Karas Red Blend</label>
+          <label class="radio"><input type="radio" name="drink" value="other"> Хочу другой напиток</label>
+          <label class="custom-answer" hidden>Твой напиток
+            <input type="text" name="drinkText" maxlength="80" pattern=".*\S.*" disabled>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Что посмотрим?</legend>
+          <label class="radio"><input type="radio" name="movie" value="Тед Лассо" required> Согласна — Тед Лассо</label>
+          <label class="radio"><input type="radio" name="movie" value="other"> Предложу своё</label>
+          <label class="custom-answer" hidden>Твой фильм или сериал
+            <input type="text" name="movieText" maxlength="80" pattern=".*\S.*" disabled>
+          </label>
+        </fieldset>
+          <label class="field">Во сколько сможешь?
+            <input type="time" name="time" required>
+          </label>
+          <button type="submit" class="primary">Отправить ответы</button>
+        </form>
+      </li>
+    </ol>
+  </main>
+  <dialog id="results" aria-labelledby="results-title">
+    <h2 id="results-title">Наш план на субботу</h2>
+    <dl id="answers"></dl>
+    <p>Сделай скриншот и отправь его тому, с кем проведёшь субботний вечер.</p>
+    <form method="dialog"><button class="edit-answers">Изменить ответы</button></form>
+  </dialog>
+  <main id="gallery" hidden aria-label="Варианты оформления">
+    <h1>Три вида Арарата</h1>
+    <nav class="choices" aria-label="Открыть вариант"></nav>
+  </main>
+</body>
+</html>
